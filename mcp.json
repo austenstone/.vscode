@@ -4,6 +4,7 @@
 			"url": "https://api.githubcopilot.com/mcp/",
 			"headers": {
 				"Authorization": "Bearer ${input:github_mcp_pat}"
+				// "Authorization": "Bearer ${env:GITHUB_TOKEN}"
 			},
 			"type": "http"
 		},
@@ -102,7 +103,7 @@
 			"type": "stdio"
 		},
 		"zapier": {
-			"url": "https://mcp.zapier.com/api/mcp/s/MzI2Y2UxNTktNTg3MC00NWFlLTk1NjMtZjZiM2NhNmU0MDhlOmMxODgxZTMzLTlhM2EtNDFlNS1iNTA4LTg3Mzg2MTA3NWYwNw==/mcp",
+			"url": "${input:zapier_mcp_url}",
 			"type": "http"
 		}
 	},
@@ -111,6 +112,12 @@
 			"type": "promptString",
 			"id": "github_mcp_pat",
 			"description": "GitHub Personal Access Token",
+			"password": true
+		},
+		{
+			"type": "promptString",
+			"id": "zapier_mcp_url",
+			"description": "Zapier MCP URL",
 			"password": true
 		}
 	]
