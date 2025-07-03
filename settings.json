@@ -61,7 +61,6 @@
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.enable": {
     "*": true,
-    "mdx": true,
     "markdown": true,
   },
   "github.copilot.nextEditSuggestions.enabled": true,
