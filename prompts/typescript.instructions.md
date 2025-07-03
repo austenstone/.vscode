@@ -1,10 +1,10 @@
 ---
-applyTo: "**/*.ts,**/*.tsx"
+applyTo: "**/*.ts,**/*.tsx,**/*.js,**/*.jsx"
 ---
 # Project coding standards for TypeScript
 
 ## General Guidelines
-- Use modern JavaScript features to write clean, concise, and readable code.
+- Use modern Typescript and JavaScript features to write clean, concise, and readable code.
 - Prefer immutable data structures and functional programming concepts.
 
 ## Asynchronous Code
@@ -32,3 +32,8 @@ applyTo: "**/*.ts,**/*.tsx"
 
 ## Template Literals
 - Use template literals (`` ` ``) for string interpolation instead of string concatenation with the `+` operator.
+
+## Libraries and Frameworks
+- Use `octokit` for GitHub API interactions
+- Use native `fetch` for HTTP requests
+- Use `Highcharts` for charting

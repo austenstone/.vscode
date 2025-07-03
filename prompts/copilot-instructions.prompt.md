@@ -6,105 +6,102 @@ tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'findTestFile
 
 This prompt is designed to instruct an AI to act as a codebase analyst, researching a specific repository to automatically generate a tailored `.github/copilot-instructions.md` file.
 
-The prompt ensures the AI knows exactly what to look for in the code and how to structure the final output for maximum effectiveness with GitHub Copilot.
+# Information
+
+## Types of custom instructions
+
+### .github/copilot-instructions.md file
+* Describe code-generation instructions in Markdown.
+* All instructions are combined in a single file, stored within the workspace.
+* Instructions are automatically included in every chat request.
+* Supported across all editors and IDEs that support Copilot.
+* Use this file to define general coding practices, preferred technologies, and project requirements that apply to all code-generation tasks.
+
+### Writing effective repository custom instructions
+The instructions you add to the `.github/copilot-instructions.md` file should be short, self-contained statements provide Copilot with relevant information to help it work in this repository.
+
+You should also consider the size and complexity of your repository. The following types of instructions may work for a small repository with only a few contributors, but for a large and diverse repository, these may cause problems:
+* Requests to refer to external resources when formulating a response
+* Instructions to answer in a particular style
+* Requests to always respond with a certain level of detail
 
 ### ACTIVATE: COPILOT INSTRUCTIONS GENERATOR
 
-## 1. Core Directive
+## Core Directive
 
-You are an expert AI Codebase Analyst. Your primary function is to analyze a specified GitHub repository, understand its structure, technologies, and conventions, and then generate a comprehensive `.github/copilot-instructions.md` file based on your findings.
+Your primary function is to analyze a specified GitHub repository, understand its structure, technologies, and conventions, and then generate a comprehensive `.github/copilot-instructions.md` file based on your findings.
 
-## 2. Input
-
-You will be given a single, mandatory input: the full GitHub repository path.
-**Format:** `repo:<owner>/<repo>`
-
-## 3. Analysis and Research Process
-
-Upon receiving the repository path, you will perform a systematic analysis. You must investigate the following areas:
-
-  * **Technology Stack & Languages:**
-      * Examine package managers (`package.json`, `pom.xml`, `requirements.txt`, `Gemfile`, `go.mod`, etc.) to identify languages, frameworks, and key libraries.
-      * Look for configuration files (`tsconfig.json`, `babel.config.js`, `.nvmrc`) to determine language versions and transpilation steps.
-      * Check for `Dockerfile` or `docker-compose.yml` to understand the runtime environment.
-
-  * **Coding Standards & Style:**
-
-      * Locate and parse linter configurations (`.eslintrc`, `.prettierrc`, `pyproject.toml`, `checkstyle.xml`) to extract rules for formatting, naming conventions, and code style.
-      * Infer style from existing code if explicit configuration is absent (e.g., indentation style, casing conventions like camelCase vs. snake\_case).
-      * Look for a `.editorconfig` file for universal style definitions.
-
-  * **Project Architecture & Structure:**
-
-      * Identify the main architectural pattern (e.g., Monorepo, Microservices, Monolithic, MVC, Serverless).
-      * Map out the primary directory structure (e.g., `src/`, `lib/`, `tests/`, `docs/`, `components/`, `api/`). Note the purpose of key folders.
-      * Look for infrastructure-as-code files (`terraform/`, `cloudformation/`) to understand deployment context.
-
-  * **Testing & Documentation:**
-
-      * Identify the testing framework and conventions by looking for files like `jest.config.js`, `vitest.config.ts`, or folders named `__tests__` or `spec`.
-      * Check for documentation standards, such as a `CONTRIBUTING.md` file, JSDoc/TSDoc comments in code, or a `docs` directory with markdown files.
-
-## 4. Output Generation
+## Output Generation
 
 After completing your analysis, synthesize your findings into a `.github/copilot-instructions.md` file. The output must be a single markdown block.
-
-  * Use the information you gathered to fill out each section of the template below.
-  * Be concise and direct. Copilot works best with clear, rule-based instructions.
-  * If you cannot find information for a specific section, state that and suggest a sensible default or leave it for the user to fill in.
+* Use the information you gathered to fill out each section of the template below.
+* Be concise and direct. Copilot works best with clear, rule-based instructions.
 
 -----
 
-### **Generated `copilot-instructions.md`**
+### Generated `.github/copilot-instructions.md` template
 
 ```markdown
-# GitHub Copilot Instructions for {{REPO_NAME}}
+---
+applyTo: "**"
+---
+```
 
-This document provides instructions to GitHub Copilot to ensure its suggestions align with our project's standards, architecture, and conventions.
+### Example 1: `.github/copilot-instructions.md` basic
 
-## 1. Project Context and Technology Stack
+```markdown
+---
+applyTo: "**"
+---
+We use Bazel for managing our Java dependencies, not Maven, so when talking about Java packages, always give me instructions and code samples that use Bazel.
 
-* **Project Goal:** This is a {{PROJECT_TYPE}} built with the following technologies.
-* **Primary Language(s):** {{LANGUAGES}} (Version: {{LANGUAGE_VERSIONS}})
-* **Core Frameworks/Libraries:** {{FRAMEWORKS_LIBRARIES}}
-* **Runtime Environment:** {{RUNTIME_ENVIRONMENT, e.g., Node.js v18, Docker container}}
-* **Package Manager:** {{PACKAGE_MANAGER}}
+We always write JavaScript with double quotes and tabs for indentation, so when your responses include JavaScript code, please follow those conventions.
 
-## 2. Architecture and Directory Structure
+Our team uses Jira for tracking items of work.
+```
 
-* **Architectural Pattern:** This project follows a {{ARCHITECTURAL_PATTERN}} pattern.
-* **Key Directories:**
-    * `src/`: Contains the main application source code.
-    * `src/components/`: For reusable UI components.
-    * `src/lib/` or `src/utils/`: For shared helper functions and utilities.
-    * `tests/` or `__tests__/`: Contains all tests. Follow existing file naming conventions for new tests (e.g., `*.test.ts`).
-    * `docs/`: Contains project documentation.
+### Example 2: `.github/copilot-instructions.md` general coding guidelines
 
-## 3. Coding Standards and Conventions
+```markdown
+---
+applyTo: "**"
+---
+# Project general coding standards
 
-* **Formatting:**
-    * **Indentation:** Use {{INDENTATION_STYLE}} (e.g., 2 spaces).
-    * **Line Endings:** Use LF.
-    * **Quotes:** Use {{QUOTE_STYLE}} (e.g., single quotes).
-* **Naming Conventions:**
-    * **Variables/Functions:** Use {{VARIABLE_CASE}} (e.g., camelCase).
-    * **Classes/Components:** Use {{CLASS_CASE}} (e.g., PascalCase).
-    * **Files:** Use {{FILE_CASE}} (e.g., kebab-case).
-* **Language-Specific Rules:**
-    * {{LANGUAGE_SPECIFIC_RULE_1}} (e.g., "Always use strict mode in JavaScript.")
-    * {{LANGUAGE_SPECIFIC_RULE_2}} (e.g., "Prefer functional components with Hooks in React.")
+## Naming Conventions
+- Use PascalCase for component names, interfaces, and type aliases
+- Use camelCase for variables, functions, and methods
+- Prefix private class members with underscore (_)
+- Use ALL_CAPS for constants
 
-## 4. Testing
+## Error Handling
+- Use try/catch blocks for async operations
+- Implement proper error boundaries in React components
+- Always log errors with contextual information
+```
 
-* **Testing Framework:** We use {{TESTING_FRAMEWORK}} for unit and integration tests.
-* **Best Practices:**
-    * Tests should be co-located with the source files or within the `tests/` directory.
-    * Mock dependencies where appropriate to ensure tests are isolated.
-    * Aim for clear and descriptive test names using the "should..." pattern.
+### Example 3: `.github/copilot-instructions.md` TypeScript and React coding guidelines
+Notice how these instructions reference the general coding guidelines file. You can separate the instructions into multiple files to keep them organized and focused on specific topics.
 
-## 5. General Instructions
+```markdown
+---
+applyTo: "**/*.ts,**/*.tsx"
+---
+# Project coding standards for TypeScript and React
 
-* Do not suggest deprecated libraries or methods.
-* Add comments to complex logic to improve maintainability.
-* Ensure all new functions, especially those in shared libraries, include appropriate documentation (e.g., JSDoc/TSDoc).
+Apply the [general coding guidelines](./general-coding.instructions.md) to all code.
+
+## TypeScript Guidelines
+- Use TypeScript for all new code
+- Follow functional programming principles where possible
+- Use interfaces for data structures and type definitions
+- Prefer immutable data (const, readonly)
+- Use optional chaining (?.) and nullish coalescing (??) operators
+
+## React Guidelines
+- Use functional components with hooks
+- Follow the React hooks rules (no conditional hooks)
+- Use React.FC type for components with children
+- Keep components small and focused
+- Use CSS modules for component styling
 ```

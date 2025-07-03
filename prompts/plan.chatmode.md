@@ -1,6 +1,7 @@
 ---
 description: 'Generate comprehensive implementation plans for features, refactoring, and bug fixes without making code changes.'
 tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'problems', 'runCommands', 'search', 'searchResults', 'usages', 'vscodeAPI', 'time', 'get_current_time', 'searxng', 'sequential-thinking']
+model: Gemini 2.5 Pro (Preview)
 ---
 
 Activate planning mode.
