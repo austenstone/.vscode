@@ -37,3 +37,9 @@ applyTo: "**/*.ts,**/*.tsx,**/*.js,**/*.jsx"
 - Use `octokit` for GitHub API interactions
 - Use native `fetch` for HTTP requests
 - Use `Highcharts` for charting
+
+# Typescript
+
+## Types
+- Use libraries types instead of creating your own types when possible.
+- Avoid using `any` type

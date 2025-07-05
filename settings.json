@@ -200,18 +200,18 @@
         ],
         "type": "stdio"
       },
-      // "supabase": {
-      //   "command": "npx",
-      //   "args": [
-      //     "-y",
-      //     "@supabase/mcp-server-supabase@latest",
-      //     "--read-only"
-      //   ],
-      //   "env": {
-      //     "SUPABASE_ACCESS_TOKEN": "${env:SUPABASE_ACCESS_TOKEN}"
-      //   },
-      //   "type": "stdio"
-      // },
+      "supabase": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@supabase/mcp-server-supabase@latest",
+          "--read-only"
+        ],
+        "env": {
+          "SUPABASE_ACCESS_TOKEN": "${env:SUPABASE_ACCESS_TOKEN}"
+        },
+        "type": "stdio"
+      },
       // "google_workspace": {
       //   "command": "uvx",
       //   "args": [
@@ -255,5 +255,11 @@
         "password": true
       }
     ]
-  }
+  },
+  "azureResourceGroups.showHiddenTypes": true,
+  "azureResourceGroups.selectedSubscriptions": [
+    "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173/7818250d-e81b-41df-a615-54ab2daffb9c",
+    "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173/2d63aa20-c132-4d37-b9ac-d1852d10ba55"
+  ],
+  "diffEditor.maxComputationTime": 0
 }
