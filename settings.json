@@ -14,13 +14,16 @@
     "dockercompose",
     "dotfiles",
     "Highcharts",
+    "leetcode",
     "momemt",
     "Neovim",
     "octocat",
     "Octodemo",
     "sarif",
     "sidenav",
-    "smee"
+    "smee",
+    "stackoverflow",
+    "supabase"
   ],
   "debug.onTaskErrors": "debugAnyway",
   "editor.inlineSuggest.enabled": true,
@@ -60,7 +63,8 @@
   "github.copilot.chat.useProjectTemplates": true,
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.enable": {
-    "*": true
+    "*": true,
+    "markdown": true
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.fixes": true,
@@ -81,7 +85,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash",
@@ -129,5 +133,29 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "chat.mcp.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  },
+  "github.copilot.chat.alternateGptPrompt.enabled": true,
+  "chat.todoListTool.enabled": true,
+  "azureResourceGroups.showHiddenTypes": true,
+  "azureResourceGroups.selectedSubscriptions": [
+    "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173/7818250d-e81b-41df-a615-54ab2daffb9c",
+    "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173/2d63aa20-c132-4d37-b9ac-d1852d10ba55"
+  ],
+  "diffEditor.maxComputationTime": 0,
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.editing.confirmEditRequestRetry": false,
+  "chat.agentSessionsViewLocation": "view",
+  "chat.emptyChatState.enabled": true,
+  "chat.math.enabled": true,
+  "chat.tools.terminal.autoApprove": {
+    "/.*/": true
   },
 }

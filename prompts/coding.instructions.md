@@ -5,7 +5,6 @@ applyTo: "**"
 
 ## Preferences Guidelines
 - Use modern features
-- TypeScript for all new code when possible
 - Indentation: Spaces over tabs (usually 2)
 - Use single quotes for strings
 - Use camelCase for variables and functions
