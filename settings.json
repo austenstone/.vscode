@@ -158,6 +158,7 @@
   "chat.tools.terminal.autoApprove": {
     "/.*/": true
   },
+<<<<<<< HEAD
   "chat.mcp.serverSampling": {
     "Global in Code - Insiders: github": {
       "allowedModels": [
@@ -166,4 +167,6 @@
     }
   },
   "biome.suggestInstallingGlobally": false,
+=======
+>>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
 }

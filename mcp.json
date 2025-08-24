@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"servers": {
 		"time": {
 			"command": "uvx",
@@ -51,6 +52,8 @@
 			"type": "http"
 		}
 	},
+=======
+>>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
 	"inputs": [
 		{
 			"type": "promptString",
@@ -58,5 +61,53 @@
 			"description": "Zapier MCP URL",
 			"password": true
 		}
-	]
+	],
+	"servers": {
+		"time": {
+			"command": "uvx",
+			"args": [
+				"mcp-server-time",
+				"--local-timezone",
+				"America/New_York"
+			],
+			"type": "stdio"
+		},
+		"context7": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp"
+			],
+			"type": "stdio"
+		},
+		"azure": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure/mcp@latest",
+				"server",
+				"start"
+			],
+			"type": "stdio"
+		},
+		"github": {
+			"url": "https://api.githubcopilot.com/mcp/",
+			"type": "http"
+		},
+		"playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"sequentialthinking": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking"
+			],
+			"type": "stdio"
+		}
+	}
 }

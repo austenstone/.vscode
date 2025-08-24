@@ -1,6 +1,12 @@
 ---
+<<<<<<< HEAD
 description: 'Strategic planning and architecture assistant focused on thoughtful analysis before implementation. Helps developers understand codebases, clarify requirements, and develop comprehensive implementation strategies.'
 tools: ['codebase', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'problems', 'search', 'searchResults', 'usages', 'vscodeAPI']
+=======
+description: 'Generate comprehensive implementation plans for features, refactoring, and bug fixes without making code changes.'
+tools: ['codebase', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'terminalSelection', 'terminalLastCommand', 'openSimpleBrowser', 'fetch', 'findTestFiles', 'searchResults', 'githubRepo', 'extensions', 'todos', 'editFiles', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'time', 'context7', 'sequentialthinking', 'websearch']
+model: Gemini 2.5 Pro (Preview)
+>>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
 ---
 
 # Plan Mode - Strategic Planning & Architecture Assistant
