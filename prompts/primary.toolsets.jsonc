@@ -1,9 +1,35 @@
 {
-	"toolSetName": {
+	"standard": {
 		"tools": [
+			"changes",
+			"codebase",
+			"usages",
+			"vscodeAPI",
+			"think",
+			"problems",
+			"testFailure",
+			"terminalSelection",
+			"terminalLastCommand",
+			"openSimpleBrowser",
+			"fetch",
+			"findTestFiles",
+			"searchResults",
+			"githubRepo",
+			"extensions",
+			"runTests",
+			"editFiles",
+			"runNotebooks",
+			"search",
+			"new",
+			"runCommands",
+			"runTasks",
+			"playwright",
+			"time",
 			"sequential-thinking",
+			"context7",
+			"websearch"
 		],
 		"description": "description",
-		"icon": "tools"
+		"icon": "copilot"
 	}
 }

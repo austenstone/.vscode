@@ -14,13 +14,16 @@
     "dockercompose",
     "dotfiles",
     "Highcharts",
+    "leetcode",
     "momemt",
     "Neovim",
     "octocat",
     "Octodemo",
     "sarif",
     "sidenav",
-    "smee"
+    "smee",
+    "stackoverflow",
+    "supabase"
   ],
   "debug.onTaskErrors": "debugAnyway",
   "editor.inlineSuggest.enabled": true,
@@ -61,7 +64,7 @@
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.enable": {
     "*": true,
-    "markdown": true,
+    "markdown": true
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.fixes": true,
@@ -82,7 +85,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash",
@@ -132,134 +135,35 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "chat.mcp.enabled": true,
-  "chat.mcp.discovery.enabled": true,
-  "mcp": {
-    "servers": {
-      "github": {
-        "url": "https://api.githubcopilot.com/mcp/",
-        "headers": {
-          "Authorization": "Bearer ${input:github_mcp_pat}"
-        },
-        "type": "http"
-      },
-      // "puppeteer": {
-      //   "command": "docker",
-      //   "args": [
-      //     "run",
-      //     "-i",
-      //     "--rm",
-      //     "-e",
-      //     "DOCKER_CONTAINER",
-      //     "mcp/puppeteer"
-      //   ],
-      //   "env": {
-      //     "DOCKER_CONTAINER": "true"
-      //   },
-      //   "type": "stdio"
-      // },
-      "playwright": {
-        "command": "npx",
-        "args": [
-          "@playwright/mcp@latest"
-        ],
-        "type": "stdio"
-      },
-      "time": {
-        "command": "uvx",
-        "args": [
-          "mcp-server-time",
-          "--local-timezone",
-          "America/New_York"
-        ],
-        "type": "stdio"
-      },
-      "searxng": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "mcp-searxng"
-        ],
-        "env": {
-          "SEARXNG_URL": "http://localhost/"
-        },
-        "type": "stdio"
-      },
-      "sequential-thinking": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@modelcontextprotocol/server-sequential-thinking"
-        ],
-        "type": "stdio"
-      },
-      "context7": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@upstash/context7-mcp"
-        ],
-        "type": "stdio"
-      },
-      "supabase": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@supabase/mcp-server-supabase@latest",
-          "--read-only"
-        ],
-        "env": {
-          "SUPABASE_ACCESS_TOKEN": "${env:SUPABASE_ACCESS_TOKEN}"
-        },
-        "type": "stdio"
-      },
-      // "google_workspace": {
-      //   "command": "uvx",
-      //   "args": [
-      //     "workspace-mcp"
-      //   ],
-      //   "env": {
-      //     "GOOGLE_OAUTH_CLIENT_ID": "${env:GOOGLE_OAUTH_CLIENT_ID}",
-      //     "GOOGLE_OAUTH_CLIENT_SECRET": "${env:GOOGLE_OAUTH_CLIENT_SECRET}"
-      //   },
-      //   "type": "stdio"
-      // },
-      // "chrome-mcp-server": {
-      //   "type": "http",
-      //   "url": "http://127.0.0.1:12306/mcp"
-      // },
-      // "zapier": {
-      //   "url": "${input:zapier_mcp_url}",
-      //   "type": "http"
-      // },
-      // "serena": {
-      //   "command": "uvx",
-      //   "args": [
-      //     "--from",
-      //     "git+https://github.com/oraios/serena",
-      //     "serena-mcp-server.exe"
-      //   ],
-      //   "type": "stdio"
-      // },
-    },
-    "inputs": [
-      {
-        "type": "promptString",
-        "id": "github_mcp_pat",
-        "description": "GitHub Personal Access Token",
-        "password": true
-      },
-      {
-        "type": "promptString",
-        "id": "zapier_mcp_url",
-        "description": "Zapier MCP URL",
-        "password": true
-      }
-    ]
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
   },
+  "github.copilot.chat.alternateGptPrompt.enabled": true,
+  "chat.todoListTool.enabled": true,
   "azureResourceGroups.showHiddenTypes": true,
   "azureResourceGroups.selectedSubscriptions": [
     "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173/7818250d-e81b-41df-a615-54ab2daffb9c",
     "a8d1c4d4-8a92-46c2-b538-1e07cd7e7173/2d63aa20-c132-4d37-b9ac-d1852d10ba55"
   ],
-  "diffEditor.maxComputationTime": 0
+  "diffEditor.maxComputationTime": 0,
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.editing.confirmEditRequestRetry": false,
+  "chat.agentSessionsViewLocation": "view",
+  "chat.emptyChatState.enabled": true,
+  "chat.math.enabled": true,
+  "chat.tools.terminal.autoApprove": {
+    "/.*/": true
+  },
+  "chat.mcp.serverSampling": {
+    "Global in Code - Insiders: github": {
+      "allowedModels": [
+        "copilot/auto"
+      ]
+    }
+  },
+  "biome.suggestInstallingGlobally": false,
 }

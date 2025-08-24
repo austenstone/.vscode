@@ -1,43 +1,5 @@
 {
 	"servers": {
-		"github": {
-			"url": "https://api.githubcopilot.com/mcp/",
-			"headers": {
-				"Authorization": "Bearer ${input:github_mcp_pat}"
-			},
-			"type": "http"
-		},
-		"puppeteer": {
-			"command": "docker",
-			"args": [
-				"run",
-				"-i",
-				"--rm",
-				"-e",
-				"DOCKER_CONTAINER",
-				"mcp/puppeteer"
-			],
-			"env": {
-				"DOCKER_CONTAINER": "true"
-			},
-			"type": "stdio"
-		},
-		"playwright": {
-			"command": "npx",
-			"args": [
-				"@playwright/mcp@latest"
-			],
-			"type": "stdio"
-		},
-		"serena": {
-			"command": "uvx",
-			"args": [
-				"--from",
-				"git+https://github.com/oraios/serena",
-				"serena-mcp-server.exe"
-			],
-			"type": "stdio"
-		},
 		"time": {
 			"command": "uvx",
 			"args": [
@@ -47,52 +9,6 @@
 			],
 			"type": "stdio"
 		},
-		"searxng": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"mcp-searxng"
-			],
-			"env": {
-				"SEARXNG_URL": "http://localhost/"
-			},
-			"type": "stdio"
-		},
-		"sequential-thinking": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@modelcontextprotocol/server-sequential-thinking"
-			],
-			"type": "stdio"
-		},
-		"supabase": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@supabase/mcp-server-supabase@latest",
-				"--read-only"
-			],
-			"env": {
-				"SUPABASE_ACCESS_TOKEN": "${env:SUPABASE_ACCESS_TOKEN}"
-			},
-			"type": "stdio"
-		},
-		"google_workspace": {
-			"command": "uvx",
-			"args": [
-				"workspace-mcp"
-			],
-			"env": {
-				"GOOGLE_OAUTH_CLIENT_ID": "${env:GOOGLE_OAUTH_CLIENT_ID}",
-				"GOOGLE_OAUTH_CLIENT_SECRET": "${env:GOOGLE_OAUTH_CLIENT_SECRET}"
-			},
-			"type": "stdio"
-		},
-		"chrome-mcp-server": {
-			"type": "http",
-			"url": "http://127.0.0.1:12306/mcp"
-		},
 		"context7": {
 			"command": "npx",
 			"args": [
@@ -101,26 +17,41 @@
 			],
 			"type": "stdio"
 		},
-		"zapier": {
-			"url": "${input:zapier_mcp_url}",
-			"type": "http"
-		},
-		"ioj": {
-			"type": "stdio",
+		"azure": {
 			"command": "npx",
 			"args": [
-				"ioj@0.0.0"
+				"-y",
+				"@azure/mcp@latest",
+				"server",
+				"start"
 			],
-			"env": {}
+			"type": "stdio"
+		},
+		"playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"sequentialthinking": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking"
+			],
+			"type": "stdio"
+		},
+		"github": {
+			"url": "https://api.githubcopilot.com/mcp/",
+			"type": "http"
+		},
+		"Chrome MCP Server": {
+			"url": "http://127.0.0.1:12306/mcp",
+			"type": "http"
 		}
 	},
 	"inputs": [
-		{
-			"type": "promptString",
-			"id": "github_mcp_pat",
-			"description": "GitHub Personal Access Token",
-			"password": true
-		},
 		{
 			"type": "promptString",
 			"id": "zapier_mcp_url",
