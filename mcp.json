@@ -2,12 +2,6 @@
 	"inputs": [
 		{
 			"type": "promptString",
-			"id": "github_mcp_pat",
-			"description": "GitHub Personal Access Token",
-			"password": true
-		},
-		{
-			"type": "promptString",
 			"id": "zapier_mcp_url",
 			"description": "Zapier MCP URL",
 			"password": true
@@ -59,6 +53,10 @@
 				"@modelcontextprotocol/server-sequential-thinking"
 			],
 			"type": "stdio"
+		},
+		"Chrome MCP Server": {
+			"url": "http://127.0.0.1:12306/mcp",
+			"type": "http"
 		}
 	}
 }

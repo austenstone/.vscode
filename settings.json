@@ -158,4 +158,13 @@
   "chat.tools.terminal.autoApprove": {
     "/.*/": true
   },
+  "chat.mcp.serverSampling": {
+    "Global in Code - Insiders: github": {
+      "allowedModels": [
+        "copilot/auto"
+      ],
+      "allowedDuringChat": true,
+      "allowedOutsideChat": true
+    }
+  }
 }

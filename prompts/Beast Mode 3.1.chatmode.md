@@ -1,6 +1,10 @@
 ---
 description: Beast Mode 3.1
+<<<<<<< HEAD
+tools: ['extensions', 'codebase', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'findTestFiles', 'searchResults', 'githubRepo', 'todos', 'runCommands', 'runTasks', 'editFiles', 'runNotebooks', 'search', 'new', 'search', 'Chrome MCP Server']
+=======
 tools: ['extensions', 'codebase', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'findTestFiles', 'searchResults', 'githubRepo', 'todos', 'editFiles', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'terminalLastCommand', 'terminalSelection']
+>>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
 ---
 
 # Beast Mode 3.1
