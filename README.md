@@ -1,0 +1,52 @@
+# 🎯 Austen's VS Code Configuration
+
+> My personal VS Code Insiders configuration - where the magic happens ✨
+
+This repository contains my VS Code user configuration, including custom Copilot instructions, MCP server integrations, and settings that power my day-to-day development experience.
+
+## 📂 Repository Structure
+
+```
+.
+├── prompts/             # 🤖⭐ Copilot customizations & AI agents
+├── mcp.json             # 🔌 Model Context Protocol server configs
+├── settings.json        # ⚙️ VS Code settings
+├── keybindings.json     # ⌨️ Custom keyboard shortcuts
+└── tasks.json           # 📋 Task configurations
+```
+
+## 🤖 Copilot Customization
+
+The `prompts/` directory is packed with custom instructions and AI agents that supercharge GitHub Copilot:
+
+### 📋 Instructions Files (`.instructions.md`)
+
+These files automatically apply context-specific rules when working with different file types.
+
+### 🚀 AI Agents (`.agent.md`)
+
+Custom AI agents for specialized tasks.
+
+### 💡 Prompts (`.prompt.md`)
+
+Reusable prompt templates
+
+### 🔧 Toolsets (`.toolsets.jsonc`)
+
+Custom toolset configurations for specialized workflows:
+
+
+## 🔌 MCP Server Configuration
+
+The [mcp.json](./mcp.json) file integrates multiple Model Context Protocol servers for extended capabilities
+
+## 🚀 Usage
+
+This is my personal VS Code configuration workspace. Feel free to explore and borrow ideas, but remember to customize for your own environment!
+
+### Applying These Configs
+
+1. Browse the `prompts/` folder for instruction and agent files
+2. Check out `mcp.json` for MCP server configurations
+3. Review `settings.json` for VS Code customizations
+4. Adapt patterns to your own workflow and preferences
