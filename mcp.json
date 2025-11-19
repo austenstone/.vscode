@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
 	"servers": {
 		"time": {
 			"command": "uvx",
@@ -18,15 +17,22 @@
 			],
 			"type": "stdio"
 		},
-		"azure": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@azure/mcp@latest",
-				"server",
-				"start"
-			],
-			"type": "stdio"
+		"github": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"type": "http",
+			"headers": {}
+		},
+		"github-security": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"type": "http",
+			"headers": {
+				"X-MCP-Toolsets": "code_security,dependabot,secret_protection,security_advisories",
+				"X-MCP-Readonly": "true"
+			}
+		},
+		"github-actions": {
+			"url": "https://api.githubcopilot.com/mcp/x/actions",
+			"type": "http"
 		},
 		"playwright": {
 			"command": "npx",
@@ -43,75 +49,64 @@
 			],
 			"type": "stdio"
 		},
-		"github": {
-			"url": "https://api.githubcopilot.com/mcp/",
-			"type": "http"
+		"angular-cli": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@angular/cli",
+				"mcp"
+			],
+			"type": "stdio"
 		},
-		"Chrome MCP Server": {
-			"url": "http://127.0.0.1:12306/mcp",
-			"type": "http"
+		"microsoft/markitdown": {
+			"type": "stdio",
+			"command": "uvx",
+			"args": [
+				"markitdown-mcp==0.0.1a4"
+			],
+			"gallery": "https://api.mcp.github.com",
+			"version": "1.0.0"
+		},
+		"hashicorp/terraform-mcp-server": {
+			"type": "stdio",
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"-e",
+				"TFE_TOKEN=${input:tfe_token}",
+				"-e",
+				"TFE_HOSTNAME=${input:tfe_hostname}",
+				"hashicorp/terraform-mcp-server"
+			],
+			"gallery": "https://api.mcp.github.com",
+			"version": "1.0.0"
+		},
+		"chrome-devtools": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"chrome-devtools-mcp@latest",
+				// "--headless=true",
+				// "--isolated=true"
+			],
+			"env": {},
+			"type": "stdio"
 		}
 	},
-=======
->>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
 	"inputs": [
 		{
+			"id": "tfe_token",
 			"type": "promptString",
-			"id": "zapier_mcp_url",
-			"description": "Zapier MCP URL",
+			"description": "Terraform API Token",
 			"password": true
+		},
+		{
+			"id": "tfe_hostname",
+			"type": "promptString",
+			"description": "Terraform hostname",
+			"password": false
 		}
-	],
-	"servers": {
-		"time": {
-			"command": "uvx",
-			"args": [
-				"mcp-server-time",
-				"--local-timezone",
-				"America/New_York"
-			],
-			"type": "stdio"
-		},
-		"context7": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@upstash/context7-mcp"
-			],
-			"type": "stdio"
-		},
-		"azure": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@azure/mcp@latest",
-				"server",
-				"start"
-			],
-			"type": "stdio"
-		},
-		"github": {
-			"url": "https://api.githubcopilot.com/mcp/",
-			"type": "http"
-		},
-		"playwright": {
-			"command": "npx",
-			"args": [
-				"@playwright/mcp@latest"
-			],
-			"type": "stdio"
-		},
-		"sequentialthinking": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@modelcontextprotocol/server-sequential-thinking"
-			],
-			"type": "stdio"
-		},
-		"Chrome MCP Server": {
-			"url": "http://127.0.0.1:12306/mcp",
-			"type": "http"
-		}
-	}
+	]
 }

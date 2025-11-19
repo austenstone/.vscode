@@ -22,3 +22,5 @@ globalStorage/*/
 # Ignore private prompts and credentials
 prompts/*private*
 prompts/*credentials*
+
+mcp/**
