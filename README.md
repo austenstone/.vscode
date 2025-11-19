@@ -4,26 +4,14 @@
 
 This repository contains my VS Code user configuration, including custom Copilot instructions, MCP server integrations, and settings that power my day-to-day development experience.
 
-## 📂 Repository Structure
-
-```
-.
-├── prompts/             # 🤖⭐ Copilot customizations & AI agents
-├── mcp.json             # 🔌 Model Context Protocol server configs
-├── settings.json        # ⚙️ VS Code settings
-├── keybindings.json     # ⌨️ Custom keyboard shortcuts
-└── tasks.json           # 📋 Task configurations
-```
-
 ## 🤖 Copilot Customization
 
 The `prompts/` directory is packed with custom instructions and AI agents that supercharge GitHub Copilot:
 
-* [📋 Instructions Files](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.instructions.md&type=code) (`.instructions.md`)
-* [AI Agents](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.agent.md&type=code) (`.agent.md`)
-* [Prompts](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.prompt.md&type=code) (`.prompt.md`)
-* [Toolsets](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.toolsets.jsonc&type=code) (`.toolsets.jsonc`)
-
+* [📋 Instructions Files (`.instructions.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.instructions.md&type=code)
+* [AI Agents (`.agent.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.agent.md&type=code)
+* [Prompts (`.prompt.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.prompt.md&type=code)
+* [Toolsets (`.toolsets.jsonc`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.toolsets.jsonc&type=code)
 
 ## 🔌 MCP Server Configuration
 
