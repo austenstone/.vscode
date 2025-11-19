@@ -8,7 +8,7 @@ This repository contains my VS Code user configuration, including custom Copilot
 
 The `prompts/` directory is packed with custom instructions and AI agents that supercharge GitHub Copilot:
 
-* [📋 Instructions Files (`.instructions.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.instructions.md&type=code)
+* [Instructions Files (`.instructions.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.instructions.md&type=code)
 * [AI Agents (`.agent.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.agent.md&type=code)
 * [Prompts (`.prompt.md`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.prompt.md&type=code)
 * [Toolsets (`.toolsets.jsonc`)](https://github.com/search?q=repo%3Aaustenstone%2F.vscode%20path%3A*.toolsets.jsonc&type=code)
