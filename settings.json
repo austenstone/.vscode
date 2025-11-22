@@ -72,6 +72,7 @@
   "github.copilot.chat.advanced.inlineEdits.ignoreCompletionsDisablement": true,
   "github.copilot.chat.advanced.inlineEdits.logContextRecorder.enabled": true,
   "github.copilot.chat.advanced.inlineEdits.xtabProvider.modelConfiguration": {
+    // "modelName": "xtab-281-v2-bs48",
     "modelName": "dd_41mini_edits_xtab_287",
     "promptingStrategy": "xtab275",
     "includeTagsInCurrentFile": false
@@ -218,7 +219,10 @@
   "[yaml]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.enabled": false,
+  "chat.customAgentInSubagent.enabled": true,
+  "chat.useNestedAgentsMdFiles": true,
+  "git.blame.statusBarItem.enabled": false,
   // "github.copilot.chat.virtualTools.threshold": 64,
   // "github.copilot.chat.advanced.claudeCode.enabled": true,
   // "github.copilot.chat.gpt5AlternatePrompt": "default"

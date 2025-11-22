@@ -20,19 +20,48 @@
 		"github": {
 			"url": "https://api.githubcopilot.com/mcp",
 			"type": "http",
-			"headers": {}
+			"headers": {
+				// "X-MCP-Toolsets": "all",
+				// "X-MCP-Readonly": "true"
+        // "X-MCP-Lockdown": "false"
+			}
 		},
 		"github-security": {
 			"url": "https://api.githubcopilot.com/mcp",
 			"type": "http",
 			"headers": {
-				"X-MCP-Toolsets": "code_security,dependabot,secret_protection,security_advisories",
-				"X-MCP-Readonly": "true"
+				"X-MCP-Toolsets": "code_security,dependabot,secret_protection,security_advisories"
 			}
 		},
 		"github-actions": {
 			"url": "https://api.githubcopilot.com/mcp/x/actions",
 			"type": "http"
+		},
+		"github-copilot": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"type": "http",
+			"headers": {
+				"X-MCP-Toolsets": "copilot,copilot_spaces,github_support_docs_search"
+			}
+		},
+		"github-projects": {
+			"url": "https://api.githubcopilot.com/mcp/x/projects",
+			"type": "http"
+		},
+		"github-discussions": {
+			"url": "https://api.githubcopilot.com/mcp/x/discussions",
+			"type": "http"
+		},
+		"github-experiments": {
+			"url": "https://api.githubcopilot.com/mcp/x/experiments",
+			"type": "http"
+		},
+		"github-other": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"type": "http",
+			"headers": {
+				"X-MCP-Toolsets": "stargazers,notifications,labels,gists,git"
+			}
 		},
 		"playwright": {
 			"command": "npx",
