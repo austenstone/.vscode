@@ -10,16 +10,13 @@
 			"type": "stdio"
 		},
 		"context7": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@upstash/context7-mcp"
-			],
-			"type": "stdio"
+			"url": "https://mcp.context7.com/mcp",
+			// "headers": {
+			// 	"CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+			// }
 		},
 		"github": {
 			"url": "https://api.githubcopilot.com/mcp",
-			"type": "http",
 			"headers": {
 				// "X-MCP-Toolsets": "all",
 				// "X-MCP-Readonly": "true"
@@ -27,42 +24,34 @@
 			}
 		},
 		"github-context": {
-			"url": "https://api.githubcopilot.com/mcp/x/context",
-			"type": "http"
+			"url": "https://api.githubcopilot.com/mcp/x/context"
 		},
 		"github-security": {
 			"url": "https://api.githubcopilot.com/mcp",
-			"type": "http",
 			"headers": {
 				"X-MCP-Toolsets": "code_security,dependabot,secret_protection,security_advisories"
 			}
 		},
 		"github-actions": {
-			"url": "https://api.githubcopilot.com/mcp/x/actions",
-			"type": "http"
+			"url": "https://api.githubcopilot.com/mcp/x/actions"
 		},
 		"github-copilot": {
 			"url": "https://api.githubcopilot.com/mcp",
-			"type": "http",
 			"headers": {
 				"X-MCP-Toolsets": "copilot,copilot_spaces,github_support_docs_search"
 			}
 		},
 		"github-projects": {
-			"url": "https://api.githubcopilot.com/mcp/x/projects",
-			"type": "http"
+			"url": "https://api.githubcopilot.com/mcp/x/projects"
 		},
 		"github-discussions": {
-			"url": "https://api.githubcopilot.com/mcp/x/discussions",
-			"type": "http"
+			"url": "https://api.githubcopilot.com/mcp/x/discussions"
 		},
 		"github-experiments": {
-			"url": "https://api.githubcopilot.com/mcp/x/experiments",
-			"type": "http"
+			"url": "https://api.githubcopilot.com/mcp/x/experiments"
 		},
 		"github-other": {
 			"url": "https://api.githubcopilot.com/mcp",
-			"type": "http",
 			"headers": {
 				"X-MCP-Toolsets": "stargazers,notifications,labels,gists,git"
 			}
@@ -120,7 +109,7 @@
 			"command": "npx",
 			"args": [
 				"-y",
-				"chrome-devtools-mcp@latest",
+				"chrome-devtools-mcp@latest"
 				// "--headless=true",
 				// "--isolated=true"
 			],
@@ -131,7 +120,7 @@
       "command": "npx",
       "args": ["-y", "firecrawl-mcp"],
       "env": {
-        "FIRECRAWL_API_KEY": "${env:FIRECRAWL_API_KEY}"
+        "FIRECRAWL_API_KEY": "${input:FIRECRAWL_API_KEY}"
       }
     }
 	},
@@ -147,6 +136,12 @@
 			"type": "promptString",
 			"description": "Terraform hostname",
 			"password": false
-		}
+		},
+    {
+      "type": "promptString",
+      "id": "FIRECRAWL_API_KEY",
+      "description": "FIRECRAWL_API_KEY",
+      "password": true
+    }
 	]
 }
