@@ -26,6 +26,10 @@
         // "X-MCP-Lockdown": "false"
 			}
 		},
+		"github-context": {
+			"url": "https://api.githubcopilot.com/mcp/x/context",
+			"type": "http"
+		},
 		"github-security": {
 			"url": "https://api.githubcopilot.com/mcp",
 			"type": "http",
@@ -122,7 +126,14 @@
 			],
 			"env": {},
 			"type": "stdio"
-		}
+		},
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "${env:FIRECRAWL_API_KEY}"
+      }
+    }
 	},
 	"inputs": [
 		{
