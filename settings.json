@@ -23,7 +23,9 @@
     "sidenav",
     "smee",
     "stackoverflow",
-    "supabase"
+    "supabase",
+    "toolsets",
+    "vnet"
   ],
   "debug.onTaskErrors": "debugAnyway",
   "editor.inlineSuggest.enabled": true,
@@ -42,9 +44,6 @@
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "file": ".copilot-commit-message-instructions.md"
-    },
-    {
-      "text": "Keep the commit message short and concise. Use imperative mood and avoid unnecessary details."
     }
   ],
   "github.copilot.chat.completionContext.typescript.mode": "sidecar",
@@ -64,9 +63,25 @@
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.enable": {
     "*": true,
-    "markdown": true
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "github-actions-workflow": true
   },
   "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.advanced.inlineEdits.ignoreCompletionsDisablement": true,
+  "github.copilot.chat.advanced.inlineEdits.logContextRecorder.enabled": true,
+  "github.copilot.chat.advanced.inlineEdits.xtabProvider.modelConfiguration": {
+    // "modelName": "xtab-281-v2-bs48",
+    "modelName": "dd_41mini_edits_xtab_287",
+    "promptingStrategy": "xtab275",
+    "includeTagsInCurrentFile": false
+  },
+  "github.copilot.chat.advanced.inlineEdits.excludedProviders": "completions,github.copilot",
+  "github.copilot.chat.advanced.inlineEdits.unification": true,
+  "github.copilot.chat.advanced.inlineEdits.cacheDelay": 200,
+  "github.copilot.chat.advanced.inlineEdits.rebasedCacheDelay": 0,
+  "github.copilot.chat.advanced.inlineEdits.debounce": 0,
   "github.copilot.nextEditSuggestions.fixes": true,
   "github.copilot.renameSuggestions.triggerAutomatically": true,
   "githubPullRequests.createOnPublishBranch": "never",
@@ -134,7 +149,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "chat.mcp.enabled": true,
   "chat.mcp.discovery.enabled": {
     "claude-desktop": true,
     "windsurf": true,
@@ -158,15 +172,57 @@
   "chat.tools.terminal.autoApprove": {
     "/.*/": true
   },
-<<<<<<< HEAD
   "chat.mcp.serverSampling": {
     "Global in Code - Insiders: github": {
       "allowedModels": [
         "copilot/auto"
-      ]
+      ],
+      "allowedDuringChat": true,
+      "allowedOutsideChat": true
     }
   },
+  "chat.agent.showThinking": true,
+  "chat.checkpoints.showFileChanges": true,
+  "chat.edits2.enabled": true,
+  "chat.useChatSessionsForCloudButton": true,
+  "github.copilot.chat.newWorkspace.useContext7": true,
+  "github.copilot.chat.enableRetryAfterFilteredResponse": true,
+  "github.copilot.chat.summarizeAgentConversationHistory.enabled": true, // This is slow
+  // "github.copilot.chat.agent.currentEditorContext.enabled": true,
+  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
+  "github.copilot.chat.edits.suggestRelatedFilesForTests": true,
+  "chat.mcp.access": "all",
+  "chat.tools.global.autoApprove": true,
+  "github.copilot.chat.azureModels": {},
+  "chat.allowAnonymousAccess": true,
+  "chat.emptyState.history.enabled": true,
+  "chat.tools.terminal.autoReplyToPrompts": true,
+  "python.terminal.useEnvFile": true,
+  "github.copilot.chat.anthropic.thinking.enabled": true,
+  "chat.tools.terminal.outputLocation": "terminal",
+  "editor.minimap.enabled": false,
+  "go.toolsManagement.autoUpdate": true,
+  "azureTerraform.survey": {
+    "surveyPromptDate": "2025-11-23T13:45:29.121Z",
+    "surveyPromptIgnoredCount": 0
+  },
+  "chat.tools.terminal.ignoreDefaultAutoApproveRules": true,
   "biome.suggestInstallingGlobally": false,
-=======
->>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
+  "remote.SSH.remotePlatform": {
+    "MacBook-Pro": "macOS"
+  },
+  "chat.tools.urls.autoApprove": {
+    "https://*.terraform.io": true,
+    "https://github.com": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "git.blame.editorDecoration.enabled": false,
+  "chat.customAgentInSubagent.enabled": true,
+  "chat.useNestedAgentsMdFiles": true,
+  "git.blame.statusBarItem.enabled": false,
+  // "github.copilot.chat.virtualTools.threshold": 64,
+  // "github.copilot.chat.advanced.claudeCode.enabled": true,
+  // "github.copilot.chat.gpt5AlternatePrompt": "default"
 }

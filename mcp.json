@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
 	"servers": {
 		"time": {
 			"command": "uvx",
@@ -11,22 +10,51 @@
 			"type": "stdio"
 		},
 		"context7": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@upstash/context7-mcp"
-			],
-			"type": "stdio"
+			"url": "https://mcp.context7.com/mcp",
+			// "headers": {
+			// 	"CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+			// }
 		},
-		"azure": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@azure/mcp@latest",
-				"server",
-				"start"
-			],
-			"type": "stdio"
+		"github": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"headers": {
+				// "X-MCP-Toolsets": "all",
+				// "X-MCP-Readonly": "true"
+        // "X-MCP-Lockdown": "false"
+			}
+		},
+		"github-context": {
+			"url": "https://api.githubcopilot.com/mcp/x/context"
+		},
+		"github-security": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"headers": {
+				"X-MCP-Toolsets": "code_security,dependabot,secret_protection,security_advisories"
+			}
+		},
+		"github-actions": {
+			"url": "https://api.githubcopilot.com/mcp/x/actions"
+		},
+		"github-copilot": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"headers": {
+				"X-MCP-Toolsets": "copilot,copilot_spaces,github_support_docs_search"
+			}
+		},
+		"github-projects": {
+			"url": "https://api.githubcopilot.com/mcp/x/projects"
+		},
+		"github-discussions": {
+			"url": "https://api.githubcopilot.com/mcp/x/discussions"
+		},
+		"github-experiments": {
+			"url": "https://api.githubcopilot.com/mcp/x/experiments"
+		},
+		"github-other": {
+			"url": "https://api.githubcopilot.com/mcp",
+			"headers": {
+				"X-MCP-Toolsets": "stargazers,notifications,labels,gists,git"
+			}
 		},
 		"playwright": {
 			"command": "npx",
@@ -43,71 +71,77 @@
 			],
 			"type": "stdio"
 		},
-		"github": {
-			"url": "https://api.githubcopilot.com/mcp/",
-			"type": "http"
+		"angular-cli": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@angular/cli",
+				"mcp"
+			],
+			"type": "stdio"
 		},
-		"Chrome MCP Server": {
-			"url": "http://127.0.0.1:12306/mcp",
-			"type": "http"
-		}
+		"microsoft/markitdown": {
+			"type": "stdio",
+			"command": "uvx",
+			"args": [
+				"markitdown-mcp==0.0.1a4"
+			],
+			"gallery": "https://api.mcp.github.com",
+			"version": "1.0.0"
+		},
+		"hashicorp/terraform-mcp-server": {
+			"type": "stdio",
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"-e",
+				"TFE_TOKEN=${input:tfe_token}",
+				"-e",
+				"TFE_HOSTNAME=${input:tfe_hostname}",
+				"hashicorp/terraform-mcp-server"
+			],
+			"gallery": "https://api.mcp.github.com",
+			"version": "1.0.0"
+		},
+		"chrome-devtools": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"chrome-devtools-mcp@latest"
+				// "--headless=true",
+				// "--isolated=true"
+			],
+			"env": {},
+			"type": "stdio"
+		},
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "${input:FIRECRAWL_API_KEY}"
+      }
+    }
 	},
-=======
->>>>>>> 4108050ad4812423542c9f418a1f5b319add2fb2
 	"inputs": [
 		{
+			"id": "tfe_token",
 			"type": "promptString",
-			"id": "zapier_mcp_url",
-			"description": "Zapier MCP URL",
+			"description": "Terraform API Token",
 			"password": true
-		}
-	],
-	"servers": {
-		"time": {
-			"command": "uvx",
-			"args": [
-				"mcp-server-time",
-				"--local-timezone",
-				"America/New_York"
-			],
-			"type": "stdio"
 		},
-		"context7": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@upstash/context7-mcp"
-			],
-			"type": "stdio"
+		{
+			"id": "tfe_hostname",
+			"type": "promptString",
+			"description": "Terraform hostname",
+			"password": false
 		},
-		"azure": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@azure/mcp@latest",
-				"server",
-				"start"
-			],
-			"type": "stdio"
-		},
-		"github": {
-			"url": "https://api.githubcopilot.com/mcp/",
-			"type": "http"
-		},
-		"playwright": {
-			"command": "npx",
-			"args": [
-				"@playwright/mcp@latest"
-			],
-			"type": "stdio"
-		},
-		"sequentialthinking": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@modelcontextprotocol/server-sequential-thinking"
-			],
-			"type": "stdio"
-		}
-	}
+    {
+      "type": "promptString",
+      "id": "FIRECRAWL_API_KEY",
+      "description": "FIRECRAWL_API_KEY",
+      "password": true
+    }
+	]
 }

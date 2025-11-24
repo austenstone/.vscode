@@ -1,5 +1,6 @@
 ---
-mode: agent
+agent: agent
+description: Review a resume
 ---
 # 📝 Agentic AI Instructions for Reviewing Resumés  
 *Built with prompt-engineering best practices*
