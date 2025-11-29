@@ -8,6 +8,7 @@
   "codesnap.transparentBackground": true,
   "cSpell.userWords": [
     "austenstone",
+    "cicd",
     "codespaces",
     "datetime",
     "devcontainers",
@@ -54,7 +55,6 @@
   "github.copilot.chat.languageContext.inline.typescript.enabled": true,
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "github.copilot.chat.newWorkspaceCreation.enabled": true,
-  "github.copilot.chat.notebook.followCellExecution.enabled": true,
   "github.copilot.chat.reviewSelection.enabled": true,
   "github.copilot.chat.reviewSelection.instructions": [],
   "github.copilot.chat.setupTests.enabled": true,
@@ -221,8 +221,16 @@
   },
   "git.blame.editorDecoration.enabled": false,
   "chat.customAgentInSubagent.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
+  "chat.extensionUnification.enabled": true,
   "chat.useNestedAgentsMdFiles": true,
-  "git.blame.statusBarItem.enabled": false,
+  "github.copilot.chat.githubMcpServer.toolsets": [
+    "default",
+    "github-actions"
+  ],
+  "github.copilot.chat.useMessagesApi": true,
+  "github.copilot.chat.tools.memory.enabled": true,
+  "chat.mcp.gallery.enabled": true,
   // "github.copilot.chat.virtualTools.threshold": 64,
   // "github.copilot.chat.advanced.claudeCode.enabled": true,
   // "github.copilot.chat.gpt5AlternatePrompt": "default"

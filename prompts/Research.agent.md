@@ -1,6 +1,6 @@
 ---
 description: 'Research mode for gathering information and analyzing topics in depth.'
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'context7/*', 'github/*', 'playwright/*', 'time/*', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'ms-vscode.vscode-websearchforcopilot/websearch', 'extensions', 'todos', 'runSubagent', 'runTests']
+tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'github/*', 'time/*', 'agent', 'playwright/*', 'io.github.upstash/context7/*', 'ms-vscode.vscode-websearchforcopilot/websearch', 'todo']
 ---
 
 Activate research mode.

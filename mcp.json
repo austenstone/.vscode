@@ -9,28 +9,27 @@
 			],
 			"type": "stdio"
 		},
-		"context7": {
-			"url": "https://mcp.context7.com/mcp",
-			// "headers": {
-			// 	"CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
-			// }
-		},
-		"github": {
+		"github-mcp-server": {
 			"url": "https://api.githubcopilot.com/mcp",
 			"headers": {
-				// "X-MCP-Toolsets": "all",
-				// "X-MCP-Readonly": "true"
-        // "X-MCP-Lockdown": "false"
-			}
+				"X-MCP-Toolsets": "default,orgs"
+			},
+			"type": "http"
 		},
 		"github-context": {
-			"url": "https://api.githubcopilot.com/mcp/x/context"
+			"url": "https://api.githubcopilot.com/mcp/x/context",
+			"type": "http"
+		},
+		"github-spaces": {
+			"url": "https://api.githubcopilot.com/mcp/x/spaces",
+			"type": "http"
 		},
 		"github-security": {
 			"url": "https://api.githubcopilot.com/mcp",
 			"headers": {
 				"X-MCP-Toolsets": "code_security,dependabot,secret_protection,security_advisories"
-			}
+			},
+			"type": "http"
 		},
 		"github-actions": {
 			"url": "https://api.githubcopilot.com/mcp/x/actions"
@@ -39,29 +38,31 @@
 			"url": "https://api.githubcopilot.com/mcp",
 			"headers": {
 				"X-MCP-Toolsets": "copilot,copilot_spaces,github_support_docs_search"
-			}
+			},
+			"type": "http"
 		},
 		"github-projects": {
-			"url": "https://api.githubcopilot.com/mcp/x/projects"
+			"url": "https://api.githubcopilot.com/mcp/x/projects",
+			"type": "http"
 		},
 		"github-discussions": {
-			"url": "https://api.githubcopilot.com/mcp/x/discussions"
+			"url": "https://api.githubcopilot.com/mcp/x/discussions",
+			"type": "http"
 		},
 		"github-experiments": {
-			"url": "https://api.githubcopilot.com/mcp/x/experiments"
+			"url": "https://api.githubcopilot.com/mcp/x/experiments",
+			"type": "http"
 		},
 		"github-other": {
 			"url": "https://api.githubcopilot.com/mcp",
 			"headers": {
 				"X-MCP-Toolsets": "stargazers,notifications,labels,gists,git"
-			}
+			},
+			"type": "http"
 		},
-		"playwright": {
-			"command": "npx",
-			"args": [
-				"@playwright/mcp@latest"
-			],
-			"type": "stdio"
+		"github-read-only": {
+			"url": "https://api.githubcopilot.com/mcp/x/all/readonly",
+			"type": "http"
 		},
 		"sequentialthinking": {
 			"command": "npx",
@@ -80,6 +81,41 @@
 			],
 			"type": "stdio"
 		},
+		// "hashicorp/terraform-mcp-server": {
+		// 	"type": "stdio",
+		// 	"command": "docker",
+		// 	"args": [
+		// 		"run",
+		// 		"-i",
+		// 		"--rm",
+		// 		"-e",
+		// 		"TFE_TOKEN=${input:tfe_token}",
+		// 		"-e",
+		// 		"TFE_HOSTNAME=${input:tfe_hostname}",
+		// 		"hashicorp/terraform-mcp-server"
+		// 	],
+		// 	"gallery": "https://api.mcp.github.com",
+		// 	"version": "1.0.0"
+		// },
+		"chrome-devtools": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"chrome-devtools-mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"firecrawl-mcp": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"firecrawl-mcp"
+			],
+			"env": {
+				"FIRECRAWL_API_KEY": "${input:FIRECRAWL_API_KEY}"
+			},
+			"type": "stdio"
+		},
 		"microsoft/markitdown": {
 			"type": "stdio",
 			"command": "uvx",
@@ -89,40 +125,26 @@
 			"gallery": "https://api.mcp.github.com",
 			"version": "1.0.0"
 		},
-		"hashicorp/terraform-mcp-server": {
+		"io.github.upstash/context7": {
 			"type": "stdio",
-			"command": "docker",
-			"args": [
-				"run",
-				"-i",
-				"--rm",
-				"-e",
-				"TFE_TOKEN=${input:tfe_token}",
-				"-e",
-				"TFE_HOSTNAME=${input:tfe_hostname}",
-				"hashicorp/terraform-mcp-server"
-			],
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.0"
-		},
-		"chrome-devtools": {
 			"command": "npx",
 			"args": [
-				"-y",
-				"chrome-devtools-mcp@latest"
-				// "--headless=true",
-				// "--isolated=true"
+				"@upstash/context7-mcp@1.0.30"
 			],
-			"env": {},
-			"type": "stdio"
+			"env": {
+				"CONTEXT7_API_KEY": "${input:CONTEXT7_API_KEY}"
+			},
+			"gallery": "https://api.mcp.github.com",
+			"version": "1.0.30"
 		},
-    "firecrawl-mcp": {
-      "command": "npx",
-      "args": ["-y", "firecrawl-mcp"],
-      "env": {
-        "FIRECRAWL_API_KEY": "${input:FIRECRAWL_API_KEY}"
-      }
-    }
+		"microsoft/playwright-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"gallery": "https://api.mcp.github.com"
+		}
 	},
 	"inputs": [
 		{
@@ -137,11 +159,23 @@
 			"description": "Terraform hostname",
 			"password": false
 		},
-    {
-      "type": "promptString",
-      "id": "FIRECRAWL_API_KEY",
-      "description": "FIRECRAWL_API_KEY",
-      "password": true
-    }
+		{
+			"type": "promptString",
+			"id": "FIRECRAWL_API_KEY",
+			"description": "FIRECRAWL_API_KEY",
+			"password": true
+		},
+		{
+			"id": "CONTEXT7_API_KEY",
+			"type": "promptString",
+			"description": "API key for authentication",
+			"password": true
+		},
+		{
+			"id": "Authorization",
+			"type": "promptString",
+			"description": "Authentication token (PAT or App token)",
+			"password": true
+		}
 	]
 }
