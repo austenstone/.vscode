@@ -24,3 +24,15 @@ prompts/*private*
 prompts/*credentials*
 
 mcp/**
+config
+.DS_Store
+description
+FETCH_HEAD
+HEAD
+index
+packed-refs
+hooks/*
+info/*
+logs/*
+objects/*
+refs/*
