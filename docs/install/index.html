@@ -32,11 +32,20 @@
     if (url && /^vscode(-insiders)?:/.test(url)) {
       document.getElementById('direct-link').href = url;
       document.getElementById('direct-link').textContent = url.split('?')[0];
-      window.location.href = url;
+      // Use a hidden iframe to trigger the vscode: URI without navigating this tab
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = url;
+      document.body.appendChild(iframe);
       setTimeout(function() {
-        document.getElementById('status').textContent = 'Redirect attempted!';
-        document.getElementById('fallback').style.display = 'block';
-      }, 2000);
+        // Try to go back to the previous page (the README)
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          document.getElementById('status').textContent = 'VS Code should be opening!';
+          document.getElementById('fallback').style.display = 'block';
+        }
+      }, 1000);
     } else {
       document.getElementById('status').textContent = 'Invalid or missing URL parameter.';
     }
