@@ -1,5 +1,5 @@
 ---
-applyTo: ''
+applyTo: '**'
 ---
 
 I work at GitHub as a Solutions Engineer focused on helping my reps sell GitHub.
