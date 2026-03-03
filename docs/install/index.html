@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to VS Code...</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #0d1117; color: #c9d1d9; }
+    .container { text-align: center; max-width: 480px; padding: 2rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+    p { color: #8b949e; line-height: 1.6; }
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .badge { display: inline-block; margin: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 VS Code Redirect</h1>
+    <p id="status">Redirecting to VS Code...</p>
+    <p id="fallback" style="display:none">
+      If VS Code didn't open, click the link below:<br><br>
+      <a id="direct-link" href="#">Open in VS Code</a>
+    </p>
+    <p style="margin-top: 2rem; font-size: 0.85rem;">
+      <a href="https://github.com/austenstone/.vscode">← Back to repository</a>
+    </p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const url = params.get('url');
+    if (url && /^vscode(-insiders)?:/.test(url)) {
+      document.getElementById('direct-link').href = url;
+      document.getElementById('direct-link').textContent = url.split('?')[0];
+      window.location.href = url;
+      setTimeout(function() {
+        document.getElementById('status').textContent = 'Redirect attempted!';
+        document.getElementById('fallback').style.display = 'block';
+      }, 2000);
+    } else {
+      document.getElementById('status').textContent = 'Invalid or missing URL parameter.';
+    }
+  </script>
+</body>
+</html>
