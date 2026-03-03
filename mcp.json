@@ -1,5 +1,12 @@
 {
 	"servers": {
+		"mcp-apps-playground": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"~/source/mcp-apps-playground/dist/index.js"
+			]
+		},
 		"time": {
 			"command": "uvx",
 			"args": [
@@ -21,7 +28,7 @@
 			"type": "http"
 		},
 		"github-spaces": {
-			"url": "https://api.githubcopilot.com/mcp/x/spaces",
+			"url": "https://api.githubcopilot.com/mcp/x/copilot_spaces",
 			"type": "http"
 		},
 		"github-security": {
@@ -32,7 +39,8 @@
 			"type": "http"
 		},
 		"github-actions": {
-			"url": "https://api.githubcopilot.com/mcp/x/actions"
+			"url": "https://api.githubcopilot.com/mcp/x/actions",
+			"type": "http"
 		},
 		"github-copilot": {
 			"url": "https://api.githubcopilot.com/mcp",
@@ -47,10 +55,6 @@
 		},
 		"github-discussions": {
 			"url": "https://api.githubcopilot.com/mcp/x/discussions",
-			"type": "http"
-		},
-		"github-experiments": {
-			"url": "https://api.githubcopilot.com/mcp/x/experiments",
 			"type": "http"
 		},
 		"github-other": {
@@ -81,22 +85,6 @@
 			],
 			"type": "stdio"
 		},
-		// "hashicorp/terraform-mcp-server": {
-		// 	"type": "stdio",
-		// 	"command": "docker",
-		// 	"args": [
-		// 		"run",
-		// 		"-i",
-		// 		"--rm",
-		// 		"-e",
-		// 		"TFE_TOKEN=${input:tfe_token}",
-		// 		"-e",
-		// 		"TFE_HOSTNAME=${input:tfe_hostname}",
-		// 		"hashicorp/terraform-mcp-server"
-		// 	],
-		// 	"gallery": "https://api.mcp.github.com",
-		// 	"version": "1.0.0"
-		// },
 		"chrome-devtools": {
 			"command": "npx",
 			"args": [
@@ -144,6 +132,55 @@
 				"@playwright/mcp@latest"
 			],
 			"gallery": "https://api.mcp.github.com"
+		},
+		"mobile-mcp": {
+			"type": "stdio",
+			"command": "npx",
+			"tools": [
+				"*"
+			],
+			"args": [
+				"@mobilenext/mobile-mcp@latest"
+			]
+		},
+		"brave-search": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@brave/brave-search-mcp-server",
+				"--transport",
+				"stdio"
+			],
+			"env": {
+				"BRAVE_API_KEY": "${input:brave-api-key}"
+			},
+			"type": "stdio"
+		},
+		"myinstants": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"myinstants-mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"workiq": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@microsoft/workiq",
+				"mcp"
+			],
+			"type": "stdio",
+			"tools": [
+				"*"
+			]
+		},
+		"notebooklm": {
+			"command": "npx",
+			"args": [
+				"notebooklm-mcp@latest"
+			]
 		}
 	},
 	"inputs": [
@@ -176,6 +213,12 @@
 			"type": "promptString",
 			"description": "Authentication token (PAT or App token)",
 			"password": true
+		},
+		{
+			"password": true,
+			"id": "brave-api-key",
+			"type": "promptString",
+			"description": "Brave Search API Key"
 		}
 	]
 }
