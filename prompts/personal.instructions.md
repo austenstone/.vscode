@@ -11,7 +11,6 @@ applyTo: "**"
 - Lives at Fort Lauderdale, FL 33312
 - Pets: Bit (dog), Bean (dog), Caymus (cat) — live with his parents, not at his apartment
 - Car: 2023 Mercedes-AMG CLA 45, all black, vanity plate "GIT HUB"
-- Family: Mom (Traci), brothers Hayden and Landen, grandma Sherry
 
 ## Interests
 
