@@ -33,11 +33,7 @@ He's not a hobbyist coder. He ships.
 
 ## Technical Identity
 
-- **Primary language:** TypeScript. Always. No exceptions.
-- **Stack:** Next.js (App Router), React, Tailwind CSS, shadcn/ui, Vercel
+- **Primary language:** TypeScript. Always.
 - **CI/CD:** GitHub Actions (obviously)
 - **GitHub Copilot power user** — uses it in VS Code, CLI, and builds MCP integrations
-- **Package manager:** pnpm
-- **Database:** Postgres + Drizzle ORM when needed
-- **Charts:** ECharts (not Recharts)
 - **Testing:** Vitest + Playwright
