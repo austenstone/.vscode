@@ -1,6 +1,6 @@
 {
   "chat.agent.maxRequests": 1000,
-  "chat.editing.autoAcceptDelay": 5,
+  "chat.editing.autoAcceptDelay": 1,
   "chat.renderRelatedFiles": true,
   "chat.tools.autoApprove": true,
   "codesnap.showLineNumbers": false,
@@ -257,7 +257,6 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
-  "chat.viewSessions.orientation": "stacked",
   "brainrot-stimulation.videoCategory": "subwaysurfer",
   "chat.agent.thinking.phrases": {
       "mode": "append",
@@ -273,7 +272,7 @@
         "Dev math is ignoring the warnings because it still built...",
         "Buying gf for 10k gp...",
         "glow1:wave: Selling lobbies 250gp ea...",
-        "Taking an arrow to the knee during code review...",
+        "Taking an arrow to the knee...",
         "Ah shit, here we go again...",
         "Pressing F to pay respects.",
         "Scalping an RTX 5090 just to run this locally...",
@@ -359,7 +358,7 @@
         "Don't stand in the fire!",
         "Smile early and often!",
         "A Blizzard employee will NEVER ask for your password.",
-        "“Bring you foe’s health down to zero while keeping your health above zero. Works every time!”",
+        "Bring you foe’s health down to zero while keeping your health above zero. Works every time!",
         "Sippin' on gin and juice\nLaid back\nWith my mind on my money and my money on my mind",
         "You know what they say cowboy, easy come easy go.",
         "Don't panic...",
@@ -382,6 +381,8 @@
         "Gotta Catch 'Em All!"
       ]
     },
+    // "chat.autoReply": true,
+    
     "chat.tools.global.autoApprove": true,
     "chat.statusWidget.anonymous": true,
     "chat.unifiedAgentsBar.enabled": true,

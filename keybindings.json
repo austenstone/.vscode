@@ -33,5 +33,11 @@
     "key": "ctrl+shift+a",
     "command": "-workbench.view.extension.azure",
     "when": "viewContainer.workbench.view.extension.azure.enabled"
+  },
+  {
+    "key": "cmd+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0003" },
+    "when": "terminalFocus && !terminalTextSelected"
   }
 ]

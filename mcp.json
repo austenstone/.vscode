@@ -76,15 +76,15 @@
 			],
 			"type": "stdio"
 		},
-		"angular-cli": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@angular/cli",
-				"mcp"
-			],
-			"type": "stdio"
-		},
+		// "angular-cli": {
+		// 	"command": "npx",
+		// 	"args": [
+		// 		"-y",
+		// 		"@angular/cli",
+		// 		"mcp"
+		// 	],
+		// 	"type": "stdio"
+		// },
 		"chrome-devtools": {
 			"command": "npx",
 			"args": [
@@ -181,6 +181,16 @@
 			"args": [
 				"notebooklm-mcp@latest"
 			]
+		},
+		"nanobanana": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"~/source/nanobanana/mcp-server/dist/index.js"
+			],
+			"env": {
+				"GEMINI_API_KEY": "${input:GEMINI_API_KEY}"
+			}
 		}
 	},
 	"inputs": [
@@ -219,6 +229,12 @@
 			"id": "brave-api-key",
 			"type": "promptString",
 			"description": "Brave Search API Key"
+		},
+		{
+			"id": "GEMINI_API_KEY",
+			"type": "promptString",
+			"description": "Gemini API Key",
+			"password": true
 		}
 	]
 }
