@@ -1,38 +1,14 @@
-# VS Code User Settings .gitignore
-# This file helps share VS Code settings while excluding personal/sensitive data
+# Ignore everything by default
+*
 
-# Personal and session data
-globalStorage/
-History/
-sync/
-workspaceStorage/
-
-# Extension-specific data that may contain personal info
-# Note: Some extensions store API keys, tokens, or personal preferences here
-globalStorage/*/
-
-# Include these important files (override any broader ignore patterns)
+# Whitelist config files
+!.gitignore
+!README.md
 !settings.json
 !keybindings.json
 !tasks.json
 !mcp.json
+
+# Whitelist prompts
 !prompts/
-!snippets/
-
-# Ignore private prompts and credentials
-prompts/*private*
-prompts/*credentials*
-
-mcp/**
-config
-.DS_Store
-description
-FETCH_HEAD
-HEAD
-index
-packed-refs
-hooks/*
-info/*
-logs/*
-objects/*
-refs/*
+!prompts/**
