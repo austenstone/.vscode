@@ -5,10 +5,18 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u001b\r"
+            "text": "\\\r\n"
         }
     },
     {
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\\\r\n"
+        }
+    },
+  {
     "key": "ctrl+shift+g",
     "command": "workbench.view.scm"
   },
@@ -31,15 +39,5 @@
     "command": "workbench.action.terminal.sendSequence",
     "args": { "text": "\u0003" },
     "when": "terminalFocus && !terminalTextSelected"
-  },
-  {
-    "key": "cmd+k cmd+o",
-    "command": "editor.foldAll",
-    "when": "editorTextFocus && foldingEnabled"
-  },
-  // {
-  //   "key": "cmd+k cmd+0",
-  //   "command": "-editor.foldAll",
-  //   "when": "editorTextFocus && foldingEnabled"
-  // }
+  }
 ]
