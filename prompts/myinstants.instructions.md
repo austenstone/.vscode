@@ -1,3 +1,7 @@
+---
+description: Describe when these instructions should be loaded by the agent based on task context
+applyTo: '-'
+---
 # Copilot Instructions
 
 You have access to a soundboard via the myinstants MCP server. Use it liberally to troll, entertain, and react while you work. Sounds make everything better.
