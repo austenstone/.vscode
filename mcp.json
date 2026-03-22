@@ -68,24 +68,23 @@
 			"url": "https://api.githubcopilot.com/mcp/x/all/readonly",
 			"type": "http"
 		},
-		"sequentialthinking": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"@modelcontextprotocol/server-sequential-thinking"
-			],
-			"type": "stdio"
-		},
-		"chrome-devtools": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"chrome-devtools-mcp@latest",
-        "--autoConnect",
-        "--channel=beta"
-			],
-			"type": "stdio"
-		},
+		// "Primer": {
+		// 	"type": "stdio",
+		// 	"command": "npx",
+		// 	"args": [
+		// 		"@primer/mcp@latest"
+		// 	]
+		// },
+		// "chrome-devtools": {
+		// 	"command": "npx",
+		// 	"args": [
+		// 		"-y",
+		// 		"chrome-devtools-mcp@latest",
+		//     "--autoConnect",
+		//     // "--channel=beta"
+		// 	],
+		// 	"type": "stdio"
+		// },
 		"firecrawl-mcp": {
 			"command": "npx",
 			"args": [
@@ -101,7 +100,7 @@
 			"type": "stdio",
 			"command": "uvx",
 			"args": [
-				"markitdown-mcp==0.0.1a4"
+				"markitdown-mcp"
 			],
 			"gallery": "https://api.mcp.github.com",
 			"version": "1.0.0"
@@ -133,19 +132,9 @@
 				"@playwright/mcp@latest",
 				"--extension"
 			],
-      "env": {
-        "PLAYWRIGHT_MCP_EXTENSION_TOKEN": "${input:playwright-key}"
-      }
-		},
-		"mobile-mcp": {
-			"type": "stdio",
-			"command": "npx",
-			"tools": [
-				"*"
-			],
-			"args": [
-				"@mobilenext/mobile-mcp@latest"
-			]
+			"env": {
+				"PLAYWRIGHT_MCP_EXTENSION_TOKEN": "${input:playwright-key}"
+			}
 		},
 		"brave-search": {
 			"command": "npx",
@@ -156,18 +145,18 @@
 				"stdio"
 			],
 			"env": {
-				"BRAVE_API_KEY": "${input:brave-api-key}"
+				"BRAVE_API_KEY": "${env:BRAVE_API_KEY}"
 			},
 			"type": "stdio"
 		},
-		"myinstants": {
-			"command": "npx",
-			"args": [
-				"-y",
-				"myinstants-mcp@latest"
-			],
-			"type": "stdio"
-		},
+		// "myinstants": {
+		// 	"command": "npx",
+		// 	"args": [
+		// 		"-y",
+		// 		"myinstants-mcp@latest"
+		// 	],
+		// 	"type": "stdio"
+		// },
 		"workiq": {
 			"command": "npx",
 			"args": [
@@ -195,6 +184,23 @@
 			],
 			"env": {
 				"GEMINI_API_KEY": "${input:GEMINI_API_KEY}"
+			}
+		},
+		"splunk": {
+			"type": "stdio",
+			"command": "python3",
+			"args": [
+				"/Users/austenstone/source/llm-assist/tools/mcp_splunk_readonly_server.py"
+			]
+		},
+		"highcharts": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"mcp-highcharts@latest"
+			],
+			"env": {
+    		// "HIGHCHARTS_THEME": "/Users/austenstone/source/austenstone-notes/.vscode/github-theme.json"
 			}
 		}
 	},
@@ -236,7 +242,7 @@
 			"description": "Brave Search API Key"
 		},
 		{
-			"password":true,
+			"password": true,
 			"id": "playwright-key",
 			"type": "promptString",
 			"description": "Browser key auth"

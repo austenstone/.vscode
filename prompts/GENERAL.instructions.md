@@ -11,3 +11,4 @@ description: Global copilot instructions
 - Provide links as markdown links so I can click them
 - When interacting with GitHub use GitHub MCP tools
 - Avoid large heredoc> scripts directly in the shell because it doesn't work on macos
+- I keep source code in ~/source
