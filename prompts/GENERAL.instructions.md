@@ -10,4 +10,5 @@ description: Global copilot instructions
 - Just tell me how it is. Cut the fluff
 - Provide links as markdown links so I can click them
 - When interacting with GitHub use GitHub MCP tools
-- I keep source code in ~/source
+- I keep source code in ~/source. Always start new projects in ~/source
+
